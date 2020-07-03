@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <title>Summer Code Camp</title>
     <link rel="stylesheet" href="../style/vitrine.css">
     <meta charset="utf-8">
 </head>
@@ -28,6 +29,12 @@
                                 <?php else : ?>
                                     <a href="http://localhost:8888/ISSC%20-%202020/ISCC-2020-J08/EX_02/?page=programme">Programme</a>
                                 <?php endif; ?>
+
+                                <?php if ($_GET['page'] == 'contact-form') : ?>
+                            <strong><a style="color:#17c1ff" href="contact-form.php">Contact Form</a><strong>
+                                <?php else : ?>
+                                    <a href="http://localhost:8888/ISSC%20-%202020/ISCC-2020-J08/EX_02/?page=contact-form">Contact Form</a>
+                                <?php endif; ?>
             </nav>
 
         </div>
@@ -44,7 +51,9 @@
         include('vitrine-contacts.html');
     } elseif ($_GET['page'] == 'programme') {
         include('vitrine-programme.html');
-    }else{
+    }elseif($_GET['page'] == 'contact-form'){
+        include('contact-form.php');
+    } else{
         include('404.php');
     }
     ?>
